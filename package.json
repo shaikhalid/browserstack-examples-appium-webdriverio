@@ -1,0 +1,28 @@
+{
+  "name": "browserstack-examples-appium-webdriverio",
+  "version": "1.0.0",
+  "description": "This project contains examples to run appium tests locally and on BrowserStack",
+  "devDependencies": {
+    "@wdio/browserstack-service": "^7.16.10",
+    "@wdio/cli": "^7.16.10",
+    "@wdio/local-runner": "^7.16.10",
+    "@wdio/mocha-framework": "^7.16.6",
+    "@wdio/spec-reporter": "^7.16.9",
+    "@wdio/allure-reporter": "^7.14.1",
+    "chai": "^4.3.4"
+  },
+  "scripts": {
+    "wdio": "wdio run resources/conf/wdio.conf_original.js",
+    "bstack-single": "wdio run resources/conf/wdio-bstack-single.conf.js",
+    "bstack-parallel": "wdio run resources/conf/wdio-bstack-parallel.conf.js",
+    "bstack-parallel-devices": "wdio run resources/conf/wdio-bstack-parallel-devices.conf.js",
+    "generate-report": "./node_modules/allure-commandline/bin/allure generate allure-results --clean && ./node_modules/allure-commandline/bin/allure open"
+  },
+  "keywords": [
+    "appium",
+    "browserstack",
+    "webdriverio"
+  ],
+  "author": "",
+  "license": "ISC"
+}
