@@ -7,7 +7,7 @@ var overrides = {
   user: process.env.BROWSERSTACK_USER,
   key: process.env.BROWSERSTACK_ACCESSKEY,
 
-  specs: ["./test/specs/e2e/e2e.spec.js"],
+  specs: ["./test/specs/local/local.spec.js"],
 
   capabilities: [
     {
@@ -20,12 +20,32 @@ var overrides = {
         "browserstack-examples-appium-webdriverio" +
           " - " +
           new Date().getTime(),
+      project: "browserstack-examples-appium-webdriverio",
       device: "Google Pixel 5",
       os_version: "11.0",
       app: process.env.BROWSERSTACK_ANDROID_APP_ID,
-      autoGrantPermissions: true,
       platformName: "Android",
+      "browserstack.local": true,
+      autoGrantPermissions: true,
+    },
+    {
+      maxInstances: 1,
+      name:
+        require("minimist")(process.argv.slice(2))["bstack-session-name"] ||
+        "default_name",
+      build:
+        process.env.BROWSERSTACK_BUILD_NAME ||
+        "browserstack-examples-appium-webdriverio" +
+          " - " +
+          new Date().getTime(),
       project: "browserstack-examples-appium-webdriverio",
+      device: "iPhone 12 Pro",
+      os_version: "14",
+      app: process.env.BROWSERSTACK_IOS_APP_ID,
+      platformName: "iOS",
+      automationName: "XCUITest",
+      "browserstack.local": true,
+      gpsEnabled: "true",
     },
   ],
 

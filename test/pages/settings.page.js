@@ -22,6 +22,7 @@ class SettingsPage extends Page {
   }
 
   async updateConfiguration() {
+    if(driver.isIOS){ await driver.hideKeyboard(); }
     await (await this.btnUpdateConfiguration).click();
   }
 }

@@ -7,7 +7,7 @@ var overrides = {
   user: process.env.BROWSERSTACK_USER,
   key: process.env.BROWSERSTACK_ACCESSKEY,
 
-  specs: ["./test/specs/e2e/e2e.spec.js"],
+  specs: ["./test/specs/local/local.spec.js"],
 
   capabilities: [
     {
@@ -26,6 +26,7 @@ var overrides = {
       autoGrantPermissions: true,
       platformName: "Android",
       project: "browserstack-examples-appium-webdriverio",
+      "browserstack.local": true,
     },
   ],
 

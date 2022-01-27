@@ -15,6 +15,7 @@ describe('Local Test', async () => {
     it(`Login message from local server should be shown`, async () => {
         await HomePage.openLoginForm();
         await LoginPage.login(browser.config.accounts[1].username, browser.config.accounts[1].password);
+        await driver.pause(20000);
         await expect(await LoginPage.txtLoginError).toHaveText('Something went wrong');
     });
 
