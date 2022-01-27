@@ -38,7 +38,7 @@ This repository contains the following WebdriverIO tests:
 
 ## Test infrastructure environments
 
-- [On-premise/self-hosted](#on-premise-self-hosted)
+- [On-premise/self-hosted](#on-premise--self-hosted)
 - [BrowserStack](#browserstack)
 
 ## Configuring the maximum parallel test threads for this repository
