@@ -57,7 +57,7 @@ var overrides = {
   connectionRetryCount: 3,
   services: ["browserstack"],
   framework: "mocha",
-  reporters: ["spec"],
+  reporters: ["spec", ["allure", { outputDir: "allure-results" }]],
   mochaOpts: {
     ui: "bdd",
     timeout: 240000,

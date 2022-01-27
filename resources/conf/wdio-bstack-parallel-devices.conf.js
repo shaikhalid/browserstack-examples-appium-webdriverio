@@ -20,7 +20,11 @@ var overrides = {
       name:
         require("minimist")(process.argv.slice(2))["bstack-session-name"] ||
         "default_name",
-      build: process.env.BROWSERSTACK_BUILD_NAME || 'browserstack-examples-appium-webdriverio' + " - " + new Date().getTime(),
+      build:
+        process.env.BROWSERSTACK_BUILD_NAME ||
+        "browserstack-examples-appium-webdriverio" +
+          " - " +
+          new Date().getTime(),
       project: "browserstack-examples-appium-webdriverio",
       maxInstances: 2,
       device: "Google Pixel 5",
@@ -33,7 +37,11 @@ var overrides = {
       name:
         require("minimist")(process.argv.slice(2))["bstack-session-name"] ||
         "default_name",
-      build: process.env.BROWSERSTACK_BUILD_NAME || 'browserstack-examples-appium-webdriverio' + " - " + new Date().getTime(),
+      build:
+        process.env.BROWSERSTACK_BUILD_NAME ||
+        "browserstack-examples-appium-webdriverio" +
+          " - " +
+          new Date().getTime(),
       project: "browserstack-examples-appium-webdriverio",
       maxInstances: 2,
       device: "iPhone 12 Pro",
@@ -53,7 +61,7 @@ var overrides = {
   connectionRetryCount: 3,
   services: ["browserstack"],
   framework: "mocha",
-  reporters: ["spec"],
+  reporters: ["spec", ["allure", { outputDir: "allure-results" }]],
   mochaOpts: {
     ui: "bdd",
     timeout: 1200000,

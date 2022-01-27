@@ -29,17 +29,7 @@ exports.config = {
   services: ["browserstack"],
 
   framework: "mocha",
-
-  reporters: [
-    [
-      "allure",
-      {
-        outputDir: "allure-results",
-        disableWebdriverStepsReporting: true,
-        disableWebdriverScreenshotsReporting: false,
-      },
-    ],
-  ],
+  reporters: ["spec", ["allure", { outputDir: "allure-results" }]],
 
   mochaOpts: {
     ui: "bdd",
