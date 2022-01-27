@@ -16,11 +16,13 @@
   "scripts": {
     "wdio": "wdio run resources/conf/wdio.conf_original.js",
     "bstack-single": "wdio run resources/conf/wdio-bstack-single.conf.js",
+    "bstack-suite": "wdio run resources/conf/wdio-bstack-suite.conf.js",
     "bstack-parallel": "wdio run resources/conf/wdio-bstack-parallel.conf.js",
     "bstack-parallel-devices": "wdio run resources/conf/wdio-bstack-parallel-devices.conf.js",
     "bstack-local": "wdio run resources/conf/wdio-bstack-local.conf.js",
     "bstack-local-parallel-devices": "wdio run resources/conf/wdio-bstack-local-parallel-devices.conf.js",
     "onprem": "wdio run resources/conf/wdio-onprem.conf.js",
+    "onprem-suite": "wdio run resources/conf/wdio-onprem-suite.conf.js",
     "generate-report": "./node_modules/allure-commandline/bin/allure generate allure-results --clean && ./node_modules/allure-commandline/bin/allure open"
   },
   "keywords": [
