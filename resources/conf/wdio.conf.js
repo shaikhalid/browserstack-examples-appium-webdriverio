@@ -5,12 +5,6 @@ exports.config = {
 
   specs: [],
 
-  capabilities: [
-    {
-      maxInstances: 1,
-      "browserstack.debug": true,
-    },
-  ],
 
   logLevel: "warn",
 
@@ -18,15 +12,11 @@ exports.config = {
 
   bail: 0,
 
-  baseUrl: "http://localhost",
-
   waitforTimeout: 10000,
 
   connectionRetryTimeout: 240000,
 
   connectionRetryCount: 3,
-
-  services: ["browserstack"],
 
   framework: "mocha",
   reporters: ["spec", ["allure", { outputDir: "allure-results" }]],

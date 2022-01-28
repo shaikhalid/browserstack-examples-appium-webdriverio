@@ -59,32 +59,6 @@ module.exports = class Page {
             ],
         },
     ]);
-    // await driver.touchPerform([
-    //   {
-    //     action: "press",
-    //     options: {
-    //       x: startX,
-    //       y: startY,
-    //     },
-    //   },
-    //   {
-    //     action: "wait",
-    //     options: {
-    //       ms: 100,
-    //     },
-    //   },
-    //   {
-    //     action: "moveTo",
-    //     options: {
-    //       x: endX,
-    //       y: endY,
-    //     },
-    //   },
-    //   {
-    //     action: "release",
-    //     options: {},
-    //   },
-    // ]);
     await driver.pause(2000);
   }
 

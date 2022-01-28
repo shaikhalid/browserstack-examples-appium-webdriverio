@@ -11,10 +11,11 @@
     "@wdio/mocha-framework": "^7.16.13",
     "@wdio/spec-reporter": "^7.16.13",
     "appium": "^1.22.2",
-    "chai": "^4.3.4"
+    "chai": "^4.3.4",
+    "allure-commandline": "^2.13.8",
+    "lodash": "4.17.21"
   },
   "scripts": {
-    "wdio": "wdio run resources/conf/wdio.conf_original.js",
     "bstack-single": "wdio run resources/conf/wdio-bstack-single.conf.js",
     "bstack-suite": "wdio run resources/conf/wdio-bstack-suite.conf.js",
     "bstack-parallel": "wdio run resources/conf/wdio-bstack-parallel.conf.js",

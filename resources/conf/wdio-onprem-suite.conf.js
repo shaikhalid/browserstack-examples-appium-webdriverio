@@ -1,4 +1,7 @@
-exports.config = {
+var defaults = require("./wdio.conf.js");
+var _ = require("lodash");
+
+var overrides = {
   port: 4723,
   specs: [
     "./test/specs/e2e/e2e.spec.js",
@@ -7,7 +10,7 @@ exports.config = {
     "./test/specs/user/*.spec.js",
     "./test/specs/cart/*.spec.js",
   ],
-  exclude: [],
+
   capabilities: [
     {
       maxInstances: 1,
@@ -17,42 +20,9 @@ exports.config = {
       autoGrantPermissions: true,
       platformName: "Android",
     },
-    // Use the below capabilities if running for iOS app
-    // {
-    //   maxInstances: 1,
-    //   device: "iPhone 12 Pro",
-    //   os_version: "14",
-    //   app: "/bin/<iOSAppName>",
-    //   gpsEnabled: "true",
-    //   automationName: "XCUITest",
-    //   platformName: "iOS",
-    // },
   ],
 
-  logLevel: "warn",
-  // logLevels: {
-  //     webdriver: 'info',
-  //     '@wdio/appium-service': 'info'
-  // },
-  bail: 0,
-  baseUrl: "http://localhost",
-  waitforTimeout: 10000,
-  connectionRetryTimeout: 240000,
-  connectionRetryCount: 3,
   services: ["appium"],
-  framework: "mocha",
-  reporters: ["spec", ["allure", { outputDir: "allure-results" }]],
-  mochaOpts: {
-    ui: "bdd",
-    timeout: 240000,
-  },
-  afterTest: async function (
-    test,
-    context,
-    { error, result, duration, passed, retries }
-  ) {
-    if (error) {
-      await driver.takeScreenshot();
-    }
-  },
 };
+
+exports.config = _.defaultsDeep(overrides, defaults.config);
