@@ -3,6 +3,7 @@ var _ = require("lodash");
 
 var overrides = {
   port: 4723,
+  path: '/',
   specs: [
     "./test/specs/e2e/e2e.spec.js",
     "./test/specs/login/*.spec.js",
