@@ -22,7 +22,7 @@ class SettingsPage extends Page {
   }
 
   async updateConfiguration() {
-    if(driver.isIOS){ await driver.hideKeyboard(); }
+    if(driver.isIOS){ await driver.hideKeyboard('swipeDown'); }
     await (await this.btnUpdateConfiguration).click();
   }
 }
