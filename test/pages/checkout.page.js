@@ -33,7 +33,20 @@ class CheckoutPage extends Page {
     await (await this.inpState).setValue(state);
     await (await this.inpPostalCode).setValue(postalCode);
     if (driver.isIOS) {
-      await driver.hideKeyboard('swipeDown');
+      if(driver.isMobile){
+        await driver.hideKeyboard();
+      }
+      else{
+        await driver.touchPerform([
+          {
+            action: "tap",
+            options: {
+              x: 500,
+              y: 500,
+            },
+          },
+        ]);
+      }
     }
     await (await this.btnCheckout).click();
   }
