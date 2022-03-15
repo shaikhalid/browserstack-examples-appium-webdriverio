@@ -22,11 +22,8 @@ class SettingsPage extends Page {
   }
 
   async updateConfiguration() {
-    if(driver.isIOS){ 
-      if(driver.isMobile){
-        await driver.hideKeyboard();
-      }
-      else {
+    if (driver.isIOS) {
+      if (driver.config.isSimulator) {
         await driver.touchPerform([
           {
             action: "tap",
@@ -36,8 +33,10 @@ class SettingsPage extends Page {
             },
           },
         ]);
+      } else {
+          await driver.hideKeyboard();
       }
-     }
+    }
     await (await this.btnUpdateConfiguration).click();
   }
 }

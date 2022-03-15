@@ -33,10 +33,7 @@ class CheckoutPage extends Page {
     await (await this.inpState).setValue(state);
     await (await this.inpPostalCode).setValue(postalCode);
     if (driver.isIOS) {
-      if(driver.isMobile){
-        await driver.hideKeyboard();
-      }
-      else{
+      if (driver.config.isSimulator) {
         await driver.touchPerform([
           {
             action: "tap",
@@ -46,6 +43,8 @@ class CheckoutPage extends Page {
             },
           },
         ]);
+      } else {
+          await driver.hideKeyboard();
       }
     }
     await (await this.btnCheckout).click();
