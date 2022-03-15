@@ -4,6 +4,7 @@ var _ = require("lodash");
 var overrides = {
   port: 4723,
   path: '/',
+  isSimulator: true,
   specs: [
     "./test/specs/e2e/e2e.spec.js",
     "./test/specs/login/*.spec.js",
@@ -17,7 +18,7 @@ var overrides = {
       maxInstances: 1,
       device: "Google Pixel 5",
       os_version: "11.0",
-      app: "/bin/<androidAppName>",
+      app: "bin/<androidAppName>",
       autoGrantPermissions: true,
       platformName: "Android",
     },

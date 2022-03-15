@@ -8,6 +8,7 @@ describe('Cart Test', async () => {
         await HomePage.scrollToElement({ anchor: "x" }, HomePage.btnAddToCart("add-to-cart-16"));
         await HomePage.addToCart("add-to-cart-16");
         await (await HomePage.cart).click();
+        await driver.pause(1000);
         await CartPage.swipeOnElement(
           { anchor: "y" },
           { start: 80, end: 50 },
