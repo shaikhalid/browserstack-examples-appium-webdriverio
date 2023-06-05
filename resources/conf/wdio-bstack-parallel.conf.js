@@ -12,7 +12,7 @@ var overrides = {
   services: [
     [ 'browserstack',
       {
-        app: "bs://<android-app-id>"
+        app: process.env.BROWSERSTACK_APP_URL
       },  
     ],
   ],
