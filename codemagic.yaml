@@ -1,0 +1,12 @@
+workflows:
+  my-workflow:
+    scripts:
+      - name: Install dependencies
+        script: npm install
+      - name: Run tests
+        script: |
+          export BROWSERSTACK_USERNAME=khalidshaikh_Cc8Pao
+          export BROWSERSTACK_ACCESS_KEY=Nwmh7iXkfjAqcWDECMXx
+          export BROWSERSTACK_APP_URL=bs://8aa06b8525a94f7652ad30b9435705433e2a2294
+          npm run bstack-parallel
+          
